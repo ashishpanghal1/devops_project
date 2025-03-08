@@ -1,0 +1,9 @@
+- name: Setup Kubernetes Cluster
+  hosts: localhost
+  tasks:
+    - name: Install Kubernetes tools
+      apt:
+        name: 
+          - kubectl
+          - awscli
+        state: present

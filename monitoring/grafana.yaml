@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboards
+data:
+  dashboard.json: |
+    {
+      "dashboard": "Kubernetes Monitoring",
+      "panels": [
+        {
+          "type": "graph",
+          "title": "CPU Usage",
+          "targets": [{ "expr": "sum(rate(container_cpu_usage_seconds_total[5m]))" }]
+        }
+      ]
+    }
